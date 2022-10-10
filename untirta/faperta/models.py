@@ -38,4 +38,3 @@ class Mahasiswa(models.Model):
 
     def __str__(self):
         return self.Nama
-
