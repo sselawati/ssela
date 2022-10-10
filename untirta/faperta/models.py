@@ -12,7 +12,7 @@ class Dosen(models.Model):
     Alamat_Rumah = models.CharField(max_length=9)
 
     def __str__(self):
-        return self.NIP
+        return self.Nama
 
 class Staf(models.Model):
     NIP = models.CharField(max_length=9)
@@ -24,10 +24,10 @@ class Staf(models.Model):
     Alamat_Rumah = models.CharField(max_length=9)
 
     def __str__(self):
-        return self.NIP
+        return self.Nama
 
 class Mahasiswa(models.Model):
-    NIP = models.CharField(max_length=9)
+    NIM = models.CharField(max_length=9)
     Nama = models.CharField(max_length=9)
     Tanggal_Lahir = models.CharField(max_length=9)
     Photo = models.CharField(max_length=9)
@@ -37,12 +37,5 @@ class Mahasiswa(models.Model):
     Alamat_Rumah = models.CharField(max_length=9)
 
     def __str__(self):
-        return self.NIP
+        return self.Nama
 
-class untirta(models.Model):
-    Dosen = models.ForeignKey(Dosen, on_delete=models.CASCADE)
-    Staf = models.ForeignKey(Staf, on_delete=models.CASCADE)
-    Mahasiswa = models.ForeignKey(Mahasiswa, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.Dosen
